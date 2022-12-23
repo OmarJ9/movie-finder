@@ -14,7 +14,7 @@ class MovieVideoLoading extends MovieVideoState {}
 class MovieVideoSuccess extends MovieVideoState {
   final List<VideoModel> videos;
 
-  const MovieVideoSuccess(this.videos);
+  const MovieVideoSuccess({required this.videos});
 
   @override
   List<Object> get props => [videos];

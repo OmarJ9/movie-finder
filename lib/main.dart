@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -12,7 +13,9 @@ import 'package:movie_finder/src/blocs/trending_movies/trending_movies_bloc.dart
 import 'package:movie_finder/src/blocs/trending_movies/trending_movies_event.dart';
 import 'package:movie_finder/src/blocs/upcoming_movies/upcoming_movies_bloc.dart';
 import 'package:movie_finder/src/blocs/upcoming_movies/upcoming_movies_event.dart';
+import 'package:movie_finder/src/config/app_route.dart';
 import 'package:movie_finder/src/config/app_theme.dart';
+import 'package:movie_finder/src/utils/bloc_observer.dart';
 import 'package:sizer/sizer.dart';
 import 'package:movie_finder/src/di/get_it.dart' as get_it;
 
@@ -24,6 +27,9 @@ void main() async {
 
   // Initialize GetIt
   get_it.init();
+
+  // This will help you observe your Bloc
+  Bloc.observer = MyBlocObserver();
 
   runApp(
     MultiBlocProvider(
@@ -67,11 +73,21 @@ class MovieFinder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Sizer(
-        builder: (context, orientation, deviceType) => MaterialApp(
-              title: 'Movie Finder',
-              debugShowCheckedModeBanner: false,
-              theme: AppThemes.light,
-              darkTheme: AppThemes.dark,
-            ));
+        builder: (context, orientation, deviceType) => MaterialApp.router(
+            title: 'Movie Finder',
+            debugShowCheckedModeBanner: false,
+            theme: AppThemes.light,
+            darkTheme: AppThemes.dark,
+            routeInformationProvider: AppRoute.router.routeInformationProvider,
+            routeInformationParser: AppRoute.router.routeInformationParser,
+            routerDelegate: AppRoute.router.routerDelegate,
+            scrollBehavior: const MaterialScrollBehavior().copyWith(
+              dragDevices: {
+                PointerDeviceKind.mouse,
+                PointerDeviceKind.touch,
+                PointerDeviceKind.stylus,
+                PointerDeviceKind.unknown
+              },
+            )));
   }
 }

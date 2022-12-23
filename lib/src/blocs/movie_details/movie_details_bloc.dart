@@ -14,7 +14,7 @@ class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
       try {
         emit(MovieDetailsLoading());
         MovieDetailsModel movie = await _repo.getMovieDetails(id: event.id);
-        emit(MovieDetailsSuccess(movie));
+        emit(MovieDetailsSuccess(movie: movie));
       } catch (e) {
         emit(MovieDetailsError(e.toString()));
       }

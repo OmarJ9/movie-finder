@@ -12,7 +12,7 @@ class MovieImagesBloc extends Bloc<MovieImagesEvent, MovieImagesState> {
       try {
         emit(MovieImagesLoading());
         List<dynamic> images = await _repo.getImages(id: event.id);
-        emit(MovieImagesSuccess(images));
+        emit(MovieImagesSuccess(images: images));
       } catch (e) {
         emit(MovieImagesError(e.toString()));
       }

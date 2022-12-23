@@ -13,7 +13,7 @@ class MovieVideoBloc extends Bloc<MovieVideoEvent, MovieVideoState> {
       try {
         emit(MovieVideoLoading());
         List<VideoModel> videos = await _repo.getVideo(id: event.id);
-        emit(MovieVideoSuccess(videos));
+        emit(MovieVideoSuccess(videos: videos));
       } catch (e) {
         emit(MovieVideoError(e.toString()));
       }

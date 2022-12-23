@@ -14,7 +14,7 @@ class MovieCastBloc extends Bloc<MovieCastEvent, MovieCastState> {
       try {
         emit(MovieCastLoading());
         List<CastCrewModel> cast = await _repo.getCastCrew(id: event.id);
-        emit(MovieCastSuccess(cast));
+        emit(MovieCastSuccess(cast: cast));
       } catch (e) {
         emit(MovieCastError(e.toString()));
       }

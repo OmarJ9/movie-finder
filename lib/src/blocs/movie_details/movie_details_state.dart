@@ -14,7 +14,7 @@ class MovieDetailsLoading extends MovieDetailsState {}
 class MovieDetailsSuccess extends MovieDetailsState {
   final MovieDetailsModel movie;
 
-  const MovieDetailsSuccess(this.movie);
+  const MovieDetailsSuccess({required this.movie});
 
   @override
   List<Object> get props => [movie];

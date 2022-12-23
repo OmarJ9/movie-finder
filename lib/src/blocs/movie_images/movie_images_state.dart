@@ -14,7 +14,7 @@ class MovieImagesLoading extends MovieImagesState {}
 class MovieImagesSuccess extends MovieImagesState {
   final List<dynamic> images;
 
-  const MovieImagesSuccess(this.images);
+  const MovieImagesSuccess({required this.images});
 
   @override
   List<Object> get props => [images];
