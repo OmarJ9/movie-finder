@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
+import 'package:movie_finder/src/presentation/screens/details_screen/widgets/back_button.dart';
 import 'package:movie_finder/src/presentation/screens/details_screen/widgets/cast_widget.dart';
 import 'package:movie_finder/src/presentation/screens/details_screen/widgets/custom_flexible_spacebar.dart';
 import 'package:movie_finder/src/presentation/screens/details_screen/widgets/screenshot_widget.dart';
@@ -48,15 +48,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               SliverAppBar(
                 pinned: true,
                 backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                leading: IconButton(
-                  onPressed: () {
-                    context.pop();
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    color: Colors.grey,
-                  ),
-                ),
+                leading: const CustomBackButton(),
                 flexibleSpace: CustomFlexibleSpaceBar(movie: moviestate.movie),
                 expandedHeight: 65.h,
               ),
