@@ -18,10 +18,7 @@ class FavoriteScreen extends StatelessWidget {
         child: StreamBuilder(
       stream: DataBaseService().moviestream(),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          print("Waaaaaaaaaaaaiting");
-          return Container();
-        } else if (snapshot.hasData) {
+        if (snapshot.hasData) {
           final data = snapshot.data as List<FavoriteMocvie>;
           if (data.isEmpty) {
             return SizedBox(
@@ -53,7 +50,7 @@ class FavoriteScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CustomText(title: snapshot.error.toString()),
+                const CustomText(title: "Something Went Wrong !!"),
                 SizedBox(
                   height: 2.h,
                 ),

@@ -1,4 +1,6 @@
 import 'package:get_it/get_it.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:movie_finder/src/data/data_sources/local_data_source.dart';
 import '../blocs/movie_cast/movie_cast_bloc.dart';
 import '../blocs/movie_details/movie_details_bloc.dart';
 import '../blocs/movie_images/movie_images_bloc.dart';
@@ -20,8 +22,13 @@ Future init() async {
   // RemoteDataSource depends on DioClient
   gI.registerLazySingleton<RemoteDataSource>(() => RemoteDataSourceImpl(gI()));
 
-  // Movie Repository depends on RemoteDataSource.
-  gI.registerLazySingleton<MovieRepository>(() => MovieRepoImpl(gI()));
+  gI.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl());
+
+  final networkinfo = InternetConnectionChecker();
+
+  // Movie Repository depends on RemoteDataSource, LocalDataSource and NetwordInfo.
+  gI.registerLazySingleton<MovieRepository>(
+      () => MovieRepoImpl(gI(), gI(), networkinfo));
 
   // BLOCs
   gI.registerFactory<PopularMovieBloc>(() => PopularMovieBloc(gI()));
