@@ -11,6 +11,7 @@ class CarouselItem extends StatelessWidget {
   final String title;
   final List<int> genre;
   final void Function() onTap;
+  final void Function() onTapList;
 
   const CarouselItem({
     super.key,
@@ -18,6 +19,7 @@ class CarouselItem extends StatelessWidget {
     required this.title,
     required this.genre,
     required this.onTap,
+    required this.onTapList,
   });
 
   @override
@@ -93,7 +95,7 @@ class CarouselItem extends StatelessWidget {
                         width: 23.w,
                         height: 4.h,
                         child: OutlinedButton(
-                          onPressed: () {},
+                          onPressed: onTapList,
                           child: const CustomText(
                             size: 8,
                             title: '+ List',

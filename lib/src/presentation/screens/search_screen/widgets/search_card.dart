@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../../../config/app_route.dart';
 import '../../../../data/core/api_constants.dart';
+import '../../../../data/models/favorite_movie_model.dart';
+import '../../../../utils/services/database_service.dart';
 import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_text.dart';
 
@@ -149,7 +152,18 @@ class SearchCard extends StatelessWidget {
                           height: 3.h,
                           width: 21.w,
                           child: OutlinedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              String userID =
+                                  Supabase.instance.client.auth.currentUser!.id;
+                              FavoriteMocvie mocvie = FavoriteMocvie(
+                                  movieID: id,
+                                  posterPath: img,
+                                  title: title,
+                                  overview: overview,
+                                  userID: userID);
+
+                              DataBaseService().addMovie(mocvie: mocvie);
+                            },
                             child: const CustomText(
                               size: 8,
                               title: '+ List',
