@@ -9,12 +9,12 @@ class AppThemes {
 
   static ThemeData light = ThemeData.light(useMaterial3: true).copyWith(
     textTheme: TextTheme(
-      headline1: GoogleFonts.poppins(
+      displayLarge: GoogleFonts.poppins(
         fontSize: 15.sp,
         fontWeight: FontWeight.bold,
         color: AppColors.deepbleu,
       ),
-      subtitle1: GoogleFonts.lato(
+      titleMedium: GoogleFonts.lato(
         fontSize: 13.sp,
         fontWeight: FontWeight.normal,
         color: AppColors.grey,
@@ -34,12 +34,12 @@ class AppThemes {
 
   static ThemeData dark = ThemeData.light(useMaterial3: true).copyWith(
     textTheme: TextTheme(
-      headline1: GoogleFonts.poppins(
+      displayLarge: GoogleFonts.poppins(
         fontSize: 15.sp,
         fontWeight: FontWeight.bold,
         color: Colors.white,
       ),
-      subtitle1: GoogleFonts.lato(
+      titleMedium: GoogleFonts.lato(
         fontSize: 13.sp,
         fontWeight: FontWeight.normal,
         color: Colors.white,

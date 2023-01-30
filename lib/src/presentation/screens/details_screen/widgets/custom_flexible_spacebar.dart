@@ -45,7 +45,7 @@ class CustomFlexibleSpaceBarState extends State<CustomFlexibleSpaceBar> {
   }
 
   void _addListener() {
-    _position = Scrollable.of(context)?.position;
+    _position = Scrollable.of(context).position;
     _position?.addListener(_positionListener);
     _positionListener();
   }

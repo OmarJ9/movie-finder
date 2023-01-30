@@ -68,7 +68,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         text: TextSpan(
                           text: 'Overview : ',
                           style:
-                              Theme.of(context).textTheme.subtitle1!.copyWith(
+                              Theme.of(context).textTheme.titleMedium!.copyWith(
                                     color: Colors.amber,
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w900,
@@ -78,7 +78,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               text: moviestate.movie.overview,
                               style: Theme.of(context)
                                   .textTheme
-                                  .subtitle1!
+                                  .titleMedium!
                                   .copyWith(
                                     fontSize: 10.sp,
                                   ),

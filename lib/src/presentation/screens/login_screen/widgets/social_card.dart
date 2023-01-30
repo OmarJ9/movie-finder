@@ -13,7 +13,7 @@ class SocialCard extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: Theme.of(context).textTheme.headline1!.color,
+            color: Theme.of(context).textTheme.displayLarge!.color,
             borderRadius: BorderRadius.circular(15),
           ),
           padding: const EdgeInsets.all(29.8),

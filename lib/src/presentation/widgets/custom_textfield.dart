@@ -32,7 +32,7 @@ class CustomTextfield extends StatelessWidget {
       controller: textEditingController,
       onChanged: onchange,
       onFieldSubmitted: onsubmit,
-      style: Theme.of(context).textTheme.subtitle1,
+      style: Theme.of(context).textTheme.titleMedium,
       decoration: InputDecoration(
           alignLabelWithHint: true,
           filled: true,
@@ -44,7 +44,7 @@ class CustomTextfield extends StatelessWidget {
               )),
           contentPadding:
               EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.3.h),
-          hintStyle: Theme.of(context).textTheme.subtitle1?.copyWith(
+          hintStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w500,
                 color: Colors.grey.shade600,

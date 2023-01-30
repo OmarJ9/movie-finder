@@ -168,7 +168,7 @@ class _LoginScreenState extends State<LoginScreen>
                       },
                       child: Text(
                         (_isloginscreen) ? 'Sign Up' : 'Log In',
-                        style: Theme.of(context).textTheme.headline1!.copyWith(
+                        style: Theme.of(context).textTheme.displayLarge!.copyWith(
                               color: AppColors.green,
                               fontSize: 10.sp,
                             ),

@@ -98,7 +98,7 @@ class FavoriteCard extends StatelessWidget {
                               text: 'Overview : ',
                               style: Theme.of(context)
                                   .textTheme
-                                  .subtitle1!
+                                  .titleMedium!
                                   .copyWith(
                                     color: Colors.amber,
                                     fontSize: 8.sp,
@@ -109,7 +109,7 @@ class FavoriteCard extends StatelessWidget {
                                     text: overview,
                                     style: Theme.of(context)
                                         .textTheme
-                                        .subtitle1!
+                                        .titleMedium!
                                         .copyWith(
                                           fontSize: 8.sp,
                                         ))

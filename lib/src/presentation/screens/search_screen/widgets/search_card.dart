@@ -112,7 +112,7 @@ class SearchCard extends StatelessWidget {
                               text: 'Overview : ',
                               style: Theme.of(context)
                                   .textTheme
-                                  .subtitle1!
+                                  .titleMedium!
                                   .copyWith(
                                     color: Colors.amber,
                                     fontSize: 8.sp,
@@ -123,7 +123,7 @@ class SearchCard extends StatelessWidget {
                                     text: overview,
                                     style: Theme.of(context)
                                         .textTheme
-                                        .subtitle1!
+                                        .titleMedium!
                                         .copyWith(
                                           fontSize: 8.sp,
                                         ))
@@ -173,7 +173,7 @@ class SearchCard extends StatelessWidget {
     return RichText(
         text: TextSpan(
             text: '$coloredtext : ',
-            style: Theme.of(context).textTheme.subtitle1!.copyWith(
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
                   color: Colors.amber,
                   fontSize: 7.sp,
                   fontWeight: FontWeight.w900,
@@ -181,7 +181,7 @@ class SearchCard extends StatelessWidget {
             children: [
           TextSpan(
               text: text,
-              style: Theme.of(context).textTheme.subtitle1!.copyWith(
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontSize: 7.sp,
                     color: Colors.grey.shade400,
                   ))

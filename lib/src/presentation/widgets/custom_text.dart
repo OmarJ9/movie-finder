@@ -30,16 +30,16 @@ class CustomText extends StatelessWidget {
           maxLines: maxlines,
           overflow: TextOverflow.ellipsis,
           style: (headline)
-              ? Theme.of(context).textTheme.headline1!.copyWith(
+              ? Theme.of(context).textTheme.displayLarge!.copyWith(
                     fontSize: size.sp,
                     color:
-                        color ?? Theme.of(context).textTheme.headline1!.color,
+                        color ?? Theme.of(context).textTheme.displayLarge!.color,
                     height: 1.5,
                   )
-              : Theme.of(context).textTheme.subtitle1!.copyWith(
+              : Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontSize: size.sp,
                     color:
-                        color ?? Theme.of(context).textTheme.subtitle1!.color,
+                        color ?? Theme.of(context).textTheme.titleMedium!.color,
                   )),
     );
   }
